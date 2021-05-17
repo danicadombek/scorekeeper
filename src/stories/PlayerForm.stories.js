@@ -7,6 +7,4 @@ export default {
   argTypes: { onSubmit: { action: 'onSubmit' } },
 }
 
-const Template = args => <PlayerForm {...args} />
-export const DefaultForm = Template.bind({})
-DefaultForm.args = {}
+export const DefaultForm = args => <PlayerForm {...args} />
