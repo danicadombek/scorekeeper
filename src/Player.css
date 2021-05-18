@@ -1,8 +1,10 @@
 .Player {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: rgb(209, 208, 208);
+  padding: 20px;
 }
 
 .Player-button {
