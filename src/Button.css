@@ -4,6 +4,7 @@
   border-radius: 4px;
   padding: 10px;
   color: snow;
+  width: auto;
 }
 
 .Button.active {
