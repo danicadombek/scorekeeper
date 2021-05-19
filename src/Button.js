@@ -23,7 +23,7 @@ const Button = styled.button`
   border-radius: 4px;
   padding: 10px;
   color: snow;
-  width: auto;
+  width: 100px;
 
   &:hover {
     background: green;

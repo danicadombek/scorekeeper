@@ -1,6 +1,6 @@
 import React from 'react'
-import './PlayerForm.css'
 import PropTypes from 'prop-types'
+import styled from 'styled-components/macro'
 
 PlayerForm.propTypes = {
   onSubmit: PropTypes.func,
@@ -8,12 +8,12 @@ PlayerForm.propTypes = {
 
 export default function PlayerForm({ onSubmit }) {
   return (
-    <form className="PlayerForm" onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <label>
         Add player:
         <input name="name" type="text" placeholder="Player name"></input>
       </label>
-    </form>
+    </Form>
   )
 
   function handleSubmit(event) {
@@ -23,3 +23,7 @@ export default function PlayerForm({ onSubmit }) {
     onSubmit(input.value)
   }
 }
+
+const Form = styled.form`
+  display: grid;
+`
