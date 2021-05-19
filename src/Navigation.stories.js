@@ -10,12 +10,12 @@ const Template = args => <Navigation />
 
 export const DefaultNavi = Template.bind({})
 DefaultNavi.args = {
-  children: 'Click me',
-  isActive: false,
+  children: 'Play',
+  isActive: true,
 }
 
 export const ActiveNavi = Template.bind({})
 ActiveNavi.args = {
-  children: 'I am active',
+  children: 'History',
   isActive: true,
 }
