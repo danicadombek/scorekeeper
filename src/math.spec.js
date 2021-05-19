@@ -1,4 +1,4 @@
-import { add } from './math'
+import { add } from './Math'
 
 describe('math', () => {
   describe('add', () => {
@@ -7,15 +7,12 @@ describe('math', () => {
       expect(result).toBe(5)
     })}
 
-    // it('returns 0 for adds(0, 0)', () => {
-    //   const result = add(0, 0)
-    //   expect(result).toBe(0)
-    // })
 
-//   //   it('returns 5 for add(5)', () => {
-//   //     const result = add(5)
-//   //     expect(result).toBe(5)
-//   //   })
+
+  //   it('returns 5 for add(5)', () => {
+  //     const result = add(5)
+  //     expect(result).toBe(5)
+  //   })
 
 //   //   it('returns 6 for add(1, 2, 3)', () => {
 //   //     const result = add(1, 2, 3)
@@ -23,3 +20,8 @@ describe('math', () => {
 //   //   })
 //   // })
 // }
+
+    // it('returns 0 for adds(0, 0)', () => {
+    //   const result = add(0, 0)
+    //   expect(result).toBe(0)
+    // })

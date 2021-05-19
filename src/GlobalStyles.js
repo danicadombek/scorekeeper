@@ -8,10 +8,10 @@ export default createGlobalStyle`
   body {
     margin: 20px;
     background-color: snow;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   
   code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   `

@@ -9,13 +9,16 @@ export default {
 const Template = args => <Navigation />
 
 export const DefaultNavi = Template.bind({})
-DefaultNavi.args = {
-  children: 'Play',
-  isActive: true,
+DefaultNavi.args = {}
+
+export const LeftNavi = Template.bind({})
+LeftNavi.args = {
+  showPlay: true,
+  showHistory: false,
 }
 
-export const ActiveNavi = Template.bind({})
-ActiveNavi.args = {
-  children: 'History',
-  isActive: true,
+export const RightNavi = Template.bind({})
+RightNavi.args = {
+  showPlay: false,
+  showHistory: true,
 }

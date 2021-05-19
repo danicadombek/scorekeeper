@@ -1,4 +1,4 @@
-import greet from './greet'
+import greet from './Greet'
 describe('greet', () => {
   it('returns "Hi, John" for greet("John")', () => {
     expect(greet('John')).toBe('Hi, John')

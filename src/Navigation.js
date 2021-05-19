@@ -1,5 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
+
+Navigation.propTypes = {
+  showPlay: PropTypes.func,
+  showHistory: PropTypes.func,
+}
 
 export default function Navigation() {
   return (
