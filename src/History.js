@@ -12,9 +12,10 @@ export default function History({ gamer, result, headline }) {
   return (
     <PlayHistory>
       <h2>{headline}</h2>
-      <GameFlex>
-        {gamer} {result}
-      </GameFlex>
+      <container>
+        <div>{gamer}</div>
+        <div> {result} </div>
+      </container>
     </PlayHistory>
   )
 }
@@ -26,9 +27,10 @@ const PlayHistory = styled.section`
   h2 {
     font-size: 20px;
   }
-`
 
-const GameFlex = styled.container`
-  display: flex;
-  justify-content: space-between;
+  container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 `
