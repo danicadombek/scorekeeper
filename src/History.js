@@ -12,10 +12,10 @@ export default function History({ gamer, result, headline }) {
   return (
     <PlayHistory>
       <h2>{headline}</h2>
-      <container>
+      <section>
         <div>{gamer}</div>
         <div> {result} </div>
-      </container>
+      </section>
     </PlayHistory>
   )
 }
