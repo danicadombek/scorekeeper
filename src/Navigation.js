@@ -5,6 +5,7 @@ import styled from 'styled-components/macro'
 Navigation.propTypes = {
   activePlay: PropTypes.bool,
   activeHistory: PropTypes.bool,
+  isActive: PropTypes.bool,
 }
 
 export default function Navigation({ isActive }) {

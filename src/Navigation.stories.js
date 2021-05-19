@@ -15,10 +15,12 @@ export const PlayNavi = Template.bind({})
 PlayNavi.args = {
   activePlay: true,
   activeHistory: false,
+  isActive: true,
 }
 
 export const HistoryNavi = Template.bind({})
 HistoryNavi.args = {
   activePlay: false,
   activeHistory: true,
+  isActive: true,
 }
