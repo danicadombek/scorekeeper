@@ -11,7 +11,7 @@ function App() {
   ])
 
   return (
-    <Wrapper>
+    <MainStyle>
       {players.map((player, index) => (
         <Player
           onMinus={() => handleMinus(index)}
@@ -28,7 +28,7 @@ function App() {
       </ScoreButtons>
       <Button onClick={resetAll}>Reset All</Button>
       <PlayerForm onSubmit={createPlayer} />
-    </Wrapper>
+    </MainStyle>
   )
 
   function resetScores() {
@@ -62,7 +62,7 @@ function App() {
   }
 }
 
-const Wrapper = styled.section`
+const MainStyle = styled.section`
   display: grid;
   gap: 30px;
 `

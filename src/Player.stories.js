@@ -6,6 +6,7 @@ export default {
   component: Player,
 }
 const Template = args => <Player {...args} />
+
 export const StartPlayer = Template.bind({})
 StartPlayer.args = {
   name: 'John Doe',

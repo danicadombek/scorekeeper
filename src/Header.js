@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function Header() {
+export default function Header(headline) {
   return (
-    <Wrapper>
+    <HeaderStyle>
       <h1>Scorekeeper</h1>
-    </Wrapper>
+    </HeaderStyle>
   )
 }
 
-const Wrapper = styled.header`
+const HeaderStyle = styled.header`
   background-color: green;
   padding: 20px;
   color: snow;
