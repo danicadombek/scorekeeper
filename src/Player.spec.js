@@ -30,4 +30,4 @@ describe('Player', () => {
     userEvent.click(minusButton)
     expect(handleOnMinus).toBeCalled()
   })
-})
+}

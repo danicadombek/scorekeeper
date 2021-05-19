@@ -1,5 +1,3 @@
-export function add(...rest) {
-  return rest.reduce((sum, cur) => {
-    return sum + cur
-  })
+export function add(a, b) {
+  return a + b
 }
