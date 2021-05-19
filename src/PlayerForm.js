@@ -8,12 +8,12 @@ PlayerForm.propTypes = {
 
 export default function PlayerForm({ onSubmit }) {
   return (
-    <Form onSubmit={handleSubmit}>
+    <FormStyle onSubmit={handleSubmit}>
       <label>
         Add player:
         <input name="name" type="text" placeholder="Player name"></input>
       </label>
-    </Form>
+    </FormStyle>
   )
 
   function handleSubmit(event) {
@@ -24,6 +24,9 @@ export default function PlayerForm({ onSubmit }) {
   }
 }
 
-const Form = styled.form`
-  display: grid;
+const FormStyle = styled.form`
+  label {
+    display: grid;
+    gap: 8px;
+  }
 `

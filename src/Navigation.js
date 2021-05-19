@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 
 Navigation.propTypes = {
-  showPlay: PropTypes.func,
-  showHistory: PropTypes.func,
+  activePlay: PropTypes.bool,
+  activeHistory: PropTypes.bool,
 }
 
-export default function Navigation() {
+export default function Navigation({ isActive }) {
   return (
     <Navi>
       <button isActive>Play</button>
@@ -30,7 +30,7 @@ const Navi = styled.nav`
     width: 100px;
 
     &:hover {
-      background: blueviolet;
+      background: darkblue;
     }
   }
 `

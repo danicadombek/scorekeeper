@@ -7,15 +7,15 @@ import styled from 'styled-components/macro'
 function App() {
   const [players, setPlayers] = useState([
     { name: 'John Doe', score: 20 },
-    { name: 'jane Doe', score: 40 },
+    { name: 'Jane Doe', score: 40 },
   ])
 
   return (
     <MainStyle>
       {players.map((player, index) => (
         <Player
-          onMinus={() => handleMinus(index)}
-          onPlus={() => handlePlus(index)}
+          onMinus={() => updateScore(index, -1)}
+          onPlus={() => updateScore(index, 1)}
           key={player.name}
           name={player.name}
           score={player.score}
@@ -25,8 +25,8 @@ function App() {
         <Button isActive onClick={resetScores}>
           Reset scores
         </Button>
+        <Button onClick={resetAll}>Reset All</Button>
       </ScoreButtons>
-      <Button onClick={resetAll}>Reset All</Button>
       <PlayerForm onSubmit={createPlayer} />
     </MainStyle>
   )
@@ -39,20 +39,11 @@ function App() {
     setPlayers([])
   }
 
-  function handleMinus(index) {
+  function updateScore(index, value) {
     const playerToUpdate = players[index]
     setPlayers([
       ...players.slice(0, index),
-      { ...playerToUpdate, score: playerToUpdate.score - 1 },
-      ...players.slice(index + 1),
-    ])
-  }
-
-  function handlePlus(index) {
-    const playerToUpdate = players[index]
-    setPlayers([
-      ...players.slice(0, index),
-      { ...playerToUpdate, score: playerToUpdate.score + 1 },
+      { ...playerToUpdate, score: playerToUpdate.score + value },
       ...players.slice(index + 1),
     ])
   }
@@ -69,6 +60,7 @@ const MainStyle = styled.section`
 
 const ScoreButtons = styled.section`
   display: flex;
+  justify-content: space-evenly;
 `
 
 export default App
