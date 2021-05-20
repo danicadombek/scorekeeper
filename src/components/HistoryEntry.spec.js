@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react'
-import History from './History'
+import HistoryEntry from './HistoryEntry'
 
-describe('History', () => {
+describe('HistoryEntry', () => {
   it('return a name, result and headline', () => {
-    render(<History gamer="Jane" result={50} headline="Reactfight" />)
+    render(<HistoryEntry gamer="Jane" result={50} headline="Reactfight" />)
     expect(screen.getByText('Jane')).toBeInTheDocument()
     expect(screen.getByText('50')).toBeInTheDocument()
     expect(screen.getByText('Reactfight')).toBeInTheDocument()

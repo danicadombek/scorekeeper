@@ -1,6 +1,6 @@
-import Player from './Player'
-import Button from './Button'
-import PlayerForm from './PlayerForm'
+import Player from '../components/Player'
+import Button from '../components/Button'
+import PlayerForm from '../components/PlayerForm'
 import { useState } from 'react'
 import styled from 'styled-components/macro'
 

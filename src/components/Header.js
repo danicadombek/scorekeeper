@@ -3,15 +3,11 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 
 Header.propTypes = {
-  header: PropTypes.string,
+  children: PropTypes.node,
 }
 
-export default function Header({ header }) {
-  return (
-    <HeaderStyle>
-      <h1>{header}</h1>
-    </HeaderStyle>
-  )
+export default function Header({ children }) {
+  return <HeaderStyle>{children}</HeaderStyle>
 }
 
 const HeaderStyle = styled.header`
