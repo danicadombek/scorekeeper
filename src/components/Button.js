@@ -1,23 +1,17 @@
-// import React from 'react'
-// import './Button.css'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 
-// Button.propTypes = {
-//   isActive: PropTypes.bool,
-//   onClick: PropTypes.func.isRequired,
-//   children: PropTypes.node,
-// }
+Button.propTypes = {
+  isActive: PropTypes.bool,
+  onClick: PropTypes.func,
+  children: PropTypes.node,
+}
 
-// export default function Button({ onClick, isActive, children }) {
-//   return (
-//     <button onClick={onClick} className={isActive ? 'Button active' : 'Button'}>
-//       {children}
-//     </button>
-//   )
-// }
+export default function Button(props) {
+  return <ButtonStyle {...props} />
+}
 
-const Button = styled.button`
+const ButtonStyle = styled.button`
   background: ${props => (props.isActive ? 'grey' : 'steelblue')};
   border: none;
   border-radius: 4px;
@@ -29,4 +23,3 @@ const Button = styled.button`
     background: green;
   }
 `
-export default Button

@@ -12,13 +12,13 @@ HistoryEntry.propTypes = {
 export default function HistoryEntry({ nameOfGame, players }) {
   return (
     <PlayHistory>
-      <h2>{nameOfGame}</h2>
+      <Title>{nameOfGame}</Title>
       <ul>
         {players.map(player => (
-          <section key={player.name}>
+          <List key={player.name}>
             <span>{player.name}</span>
             <span>{player.score}</span>
-          </section>
+          </List>
         ))}
       </ul>
     </PlayHistory>
@@ -29,13 +29,17 @@ const PlayHistory = styled.section`
   background-color: sandybrown;
   padding: 20px;
 
-  h2 {
-    font-size: 20px;
-  }
-
   section {
     display: flex;
     justify-content: space-between;
     align-content: flex-start;
   }
+`
+
+const Title = styled.h2`
+  font-size: 20px;
+`
+
+const List = styled.li`
+  list-style-type: none;
 `

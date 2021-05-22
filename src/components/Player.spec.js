@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import Player from './Player'
 
 describe('Player', () => {
-  it('returns a name, score and two buttons', async () => {
+  it('returns a name, score and two buttons', () => {
     render(
       <Player name="John" score={55} onPlus={() => {}} onMinus={() => {}} />
     )
@@ -14,7 +14,7 @@ describe('Player', () => {
     expect(buttons.length).toBe(2)
   })
 
-  it('calls onPlus and onMinus correctly', async () => {
+  it('calls onPlus and onMinus correctly', () => {
     const handleOnPlus = jest.fn()
     const handleOnMinus = jest.fn()
 
