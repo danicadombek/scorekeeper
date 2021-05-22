@@ -15,6 +15,7 @@ const HeaderStyle = styled.header`
   padding: 20px;
   color: snow;
   text-align: center;
+  width: auto;
 
   h1 {
     font-size: 20px;

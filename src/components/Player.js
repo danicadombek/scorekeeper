@@ -12,9 +12,12 @@ Player.propTypes = {
 export default function Player({ name, score, onMinus, onPlus }) {
   return (
     <PlayerStyle>
-      {name} <button onClick={onMinus}>-</button>
-      <output>{score}</output>
-      <button onClick={onPlus}>+</button>
+      {name}
+      <Grid>
+        <button onClick={onMinus}>-</button>
+        <output>{score}</output>
+        <button onClick={onPlus}>+</button>
+      </Grid>
     </PlayerStyle>
   )
 }
@@ -33,4 +36,9 @@ const PlayerStyle = styled.section`
     border: none;
     border-radius: 4px;
   }
+`
+const Grid = styled.div`
+  display: flex;
+  gap: 30px;
+  align-items: center;
 `

@@ -1,42 +1,64 @@
-import Player from '../components/Player'
-import Button from '../components/Button'
-import PlayerForm from '../components/PlayerForm'
 import { useState } from 'react'
+import Navigation from './components/Navigation'
+import Header from '../src/components/Header'
+import CreatePage from './pages/CreatePage'
+import GamePage from './pages/GamePage'
+import HistoryPage from './pages/HistoryPage'
 import styled from 'styled-components/macro'
 
 function App() {
-  const [players, setPlayers] = useState([
-    { name: 'John Doe', score: 20 },
-    { name: 'Jane Doe', score: 40 },
-  ])
-
+  const [currentPageId, setCurrentPageId] = useState('create')
+  const [players, setPlayers] = useState([])
+  const [history, setHistory] = useState([])
+  const [nameOfGame, setnameOfGame] = useState('')
+  console.log(setPlayers)
   return (
-    <MainStyle>
-      {players.map((player, index) => (
-        <Player
-          onMinus={() => updateScore(index, -1)}
-          onPlus={() => updateScore(index, 1)}
-          key={player.name}
-          name={player.name}
-          score={player.score}
+    <AppGrid>
+      <Header />
+      {currentPageId === 'create' && (
+        <CreatePage onNavigate={setCurrentPageId} onSubmit={handleSubmit} />
+      )}
+
+      {currentPageId === 'game' && (
+        <GamePage
+          nameOfGame={nameOfGame}
+          players={players}
+          onResetScores={resetScores}
+          onEndGame={handleEndGame}
+          onPlayerUpdate={updateScore}
         />
-      ))}
-      <ScoreButtons>
-        <Button isActive onClick={resetScores}>
-          Reset scores
-        </Button>
-        <Button onClick={resetAll}>Reset All</Button>
-      </ScoreButtons>
-      <PlayerForm onSubmit={createPlayer} />
-    </MainStyle>
+      )}
+
+      {currentPageId === 'history' && (
+        <HistoryPage games={history} onNavigate={setCurrentPageId} />
+      )}
+
+      {currentPageId !== 'game' && (
+        <Navigation
+          onNavigate={setCurrentPageId}
+          currentPageId={currentPageId}
+          pages={[
+            { title: 'Create', id: 'create' },
+            { title: 'History', id: 'history' },
+          ]}
+        />
+      )}
+    </AppGrid>
   )
+
+  function handleSubmit(nameOfGame, players) {
+    setPlayers(players)
+    setnameOfGame(nameOfGame)
+    setCurrentPageId('game')
+  }
+
+  function handleEndGame() {
+    setCurrentPageId('history')
+    setHistory([{ players, nameOfGame }, ...history])
+  }
 
   function resetScores() {
     setPlayers(players.map(player => ({ ...player, score: 0 })))
-  }
-
-  function resetAll() {
-    setPlayers([])
   }
 
   function updateScore(index, value) {
@@ -47,13 +69,9 @@ function App() {
       ...players.slice(index + 1),
     ])
   }
-
-  function createPlayer(name) {
-    setPlayers([...players, { name, score: 0 }])
-  }
 }
 
-const MainStyle = styled.section`
+const AppGrid = styled.section`
   display: grid;
   gap: 30px;
 `

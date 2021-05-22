@@ -1,28 +1,27 @@
-import React from 'react'
 import PropTypes from 'prop-types'
-// import styled from 'styled-components/macro'
-import Button from '../components/Button'
+import styled from 'styled-components/macro'
 import Header from '../components/Header'
 import Player from '../components/Player'
-import CreatePage from './CreatePage'
+import Button from '../components/Button'
 
-CreatePage.propTypes = {
+GamePage.propTypes = {
   nameOfGame: PropTypes.string,
   players: PropTypes.arrayOf(
     PropTypes.shape({ name: PropTypes.string, score: PropTypes.number })
   ),
-  onPlayerUpdate: PropTypes.func,
-  onResetScores: PropTypes.func,
-  onEndGame: PropTypes.func,
+  onResetScores: PropTypes.func.isRequired,
+  onEndGame: PropTypes.func.isRequired,
+  onPlayerUpdate: PropTypes.func.isRequired,
 }
 
 export default function GamePage({
-  nameOfGame,
   players,
-  onPlayerUpdate,
+  nameOfGame,
   onResetScores,
   onEndGame,
+  onPlayerUpdate,
 }) {
+  console.log(players)
   return (
     <section>
       <Header>{nameOfGame}</Header>
@@ -35,8 +34,16 @@ export default function GamePage({
           score={score}
         />
       ))}
-      <Button onClick={onResetScores}>Reset score</Button>
-      <Button onClick={onEndGame}>End game</Button>
+      <Buttons>
+        <Button onClick={onResetScores}>Reset scores</Button>
+        <Button onClick={onEndGame}>End game</Button>
+      </Buttons>
     </section>
   )
 }
+const Buttons = styled.div`
+  margin-top: 20px;
+  display: grid;
+  gap: 230px;
+  justify-items: center;
+`

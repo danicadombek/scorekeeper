@@ -37,22 +37,20 @@ export default function CreatePage({ onSubmit }) {
       .split(',')
       .map(name => ({ name: name.trim(), score: 0 }))
 
-    const game = {
-      nameOfGame,
-      players,
-    }
-    onSubmit(game)
+    onSubmit(nameOfGame, players)
   }
 }
 
 const Grid = styled.section`
+  padding: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr auto 40px;
   column-gap: 40px;
 
   form {
     display: grid;
     gap: 16px;
+    padding: 4px;
   }
 
   label {
