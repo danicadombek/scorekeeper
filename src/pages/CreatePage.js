@@ -3,12 +3,14 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 import Button from '../components/Button'
 import InputLabeled from '../components/InputLabeled'
+import { useHistory } from 'react-router-dom'
 
 CreatePage.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 }
 
 export default function CreatePage({ onSubmit }) {
+  let path = useHistory()
   return (
     <Grid>
       <form aria-label="Create game" onSubmit={handleSubmit}>
@@ -36,7 +38,7 @@ export default function CreatePage({ onSubmit }) {
     const players = playersInput.value
       .split(',')
       .map(name => ({ name: name.trim(), score: 0 }))
-
+    path.push('/game')
     onSubmit(nameOfGame, players)
   }
 }
