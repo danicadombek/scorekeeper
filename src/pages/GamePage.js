@@ -21,7 +21,6 @@ export default function GamePage({
   onEndGame,
   onPlayerUpdate,
 }) {
-  console.log(players)
   return (
     <section>
       <Header>{nameOfGame}</Header>
