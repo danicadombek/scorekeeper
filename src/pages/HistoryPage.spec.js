@@ -28,4 +28,11 @@ describe('HistoryPage', () => {
     expect(firstHeading).toHaveTextContent('Carcassonne')
     expect(secondHeading).toHaveTextContent('Kniffel')
   })
+
+  //   const [player1, player2, player3, player4] = screen.getAllByText(
+  //   )
+  //   expect(player1).toHaveTextContent('John')
+  //   //   expect(player2).toHaveTextContent(/Jane.*3/)
+  //   //   expect(player3).toHaveTextContent(/John.*8/)
+  //   //   expect(player4).toHaveTextContent(/Jane.*5/)
 })
